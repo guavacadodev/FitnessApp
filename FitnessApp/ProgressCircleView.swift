@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ProgressCircleView: View {
+    @Binding var progress: Int
+    var goal: Int
+    var color: Color
+    private let width: CGFloat = 20
     var body: some View {
         ZStack {
             Circle()
-                .stroke(.red.opacity(0.3), lineWidth: 20)
+                .stroke(color.opacity(0.3), lineWidth: width)
             Circle()
-                .trim(from: 0, to: 0.3)
-                .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round))
-                .rotation(Angle(degrees: 270))
+                .trim(from: 0, to: CGFloat(progress) / CGFloat(goal))
+                .stroke(color, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                .rotationEffect(Angle(degrees: 270))
                 .shadow(radius: 5)
                 
         }
@@ -23,5 +27,5 @@ struct ProgressCircleView: View {
 }
 
 #Preview {
-    ProgressCircleView()
+    ProgressCircleView(progress: .constant(100), goal: 200, color: .red)
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var calories: Int = 123
+    @State var active: Int = 52
+    @State var stand: Int = 8
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
@@ -47,10 +50,10 @@ struct HomeView: View {
                     Spacer()
                     
                     ZStack {
-                        ProgressCircleView()
-                        ProgressCircleView()
+                        ProgressCircleView(progress: $calories, goal: 600, color: .red)
+                        ProgressCircleView(progress: $active, goal: 60, color: .green)
                             .padding(.all, 20)
-                        ProgressCircleView()
+                        ProgressCircleView(progress: $stand, goal: 600, color: .blue)
                             .padding(.all, 40)
                     }
                     .padding(.horizontal)
