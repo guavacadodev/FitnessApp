@@ -35,16 +35,6 @@
 			path = FitnessApp;
 			sourceTree = "<group>";
 		};
-		1C39F9F62F55484F0013C59C /* FitnessAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FitnessAppTests;
-			sourceTree = "<group>";
-		};
-		1C39FA002F55484F0013C59C /* FitnessAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FitnessAppUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				1C39F9E82F55484D0013C59C /* FitnessApp */,
-				1C39F9F62F55484F0013C59C /* FitnessAppTests */,
-				1C39FA002F55484F0013C59C /* FitnessAppUITests */,
 				1C39F9E72F55484D0013C59C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				1C39F9F52F55484F0013C59C /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				1C39F9F62F55484F0013C59C /* FitnessAppTests */,
-			);
 			name = FitnessAppTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				1C39F9FF2F55484F0013C59C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1C39FA002F55484F0013C59C /* FitnessAppUITests */,
 			);
 			name = FitnessAppUITests;
 			packageProductDependencies = (
