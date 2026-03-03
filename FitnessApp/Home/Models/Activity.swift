@@ -9,7 +9,6 @@ import SwiftUI
 import Foundation
 
 struct Activity {
-    let id: Int
     let title: String
     let subTitle: String
     let image: String
