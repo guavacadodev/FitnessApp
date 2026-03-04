@@ -10,19 +10,21 @@ git config --global credential.helper 'cache --timeout 10800'
 while true; do
   sleep $duration
 
-  CHANGED_FILES=$(git status --porcelain | awk '{print $2}')
+  git add .
 
-  if [ -z "$CHANGED_FILES" ]; then
+  SUMMARY=$(git diff --cached --stat)
+
+  if [ -z "$SUMMARY" ]; then
     echo "No changes to commit"
   else
-    git add .
-
-    COMMIT_MSG="Auto Commit: Updated files -> $CHANGED_FILES"
+    COMMIT_MSG="Auto Commit
+$SUMMARY"
 
     git commit -m "$COMMIT_MSG"
     git push
 
-    echo "Committed: $COMMIT_MSG"
+    echo "Committed:"
+    echo "$SUMMARY"
   fi
 
 done
