@@ -81,7 +81,7 @@ class HomeViewModel: ObservableObject {
             case .success(let hours):
                 DispatchQueue.main.async {
                     self.stand = hours
-                    let activity = Activity(title: "Standing Hours", subTitle: "today", image: "figure.stand", tintColor: .blue, amount: "\(hours) hrs")
+                    let activity = Activity(title: "Standing Hours", subTitle: "tomorrow", image: "figure.stand", tintColor: .yellow, amount: "\(hours) hrs")
                     self.activities.append(activity)
                 }
             case .failure(let failure):
